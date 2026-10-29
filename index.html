@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MiTienda, catálogo académico de tecnología.">
+  <title>MiTienda | Tecnología para ti</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="MiTienda inicio"><span class="brand-mark">M</span><span>MiTienda</span></a>
+    <form class="search" id="searchForm" role="search">
+      <input id="searchInput" type="search" placeholder="Buscar productos, marcas y más..." aria-label="Buscar productos">
+      <button aria-label="Buscar" type="submit">⌕</button>
+    </form>
+    <button class="cart-button" id="openCart" aria-label="Abrir carrito">🛒 <span>Carrito</span><b id="cartCount">0</b></button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">TECNOLOGÍA • CALIDAD • CONFIANZA</span>
+      <h1>Todo lo que buscas,<br><em>en un solo lugar.</em></h1>
+      <p>Encuentra tu próximo dispositivo favorito con precios especiales y atención personalizada.</p>
+      <a href="#catalogo" class="primary-link">Explorar catálogo <span>→</span></a>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="orb orb-one"></div><div class="orb orb-two"></div>
+      <div class="device phone-device"><div class="device-screen"><span>Mi</span><b>01</b></div></div>
+      <div class="device laptop-device"><div class="laptop-screen">TECH<span>STORE</span></div><div class="laptop-base"></div></div>
+      <div class="floating-tag">NUEVA<br><b>TECNOLOGÍA</b></div>
+    </div>
+  </section>
+
+  <main class="container" id="catalogo">
+    <div class="section-heading">
+      <div><span class="eyebrow">SELECCIÓN PARA TI</span><h2>Explora nuestros productos</h2></div>
+      <label class="sort-label">Ordenar por
+        <select id="sortSelect"><option value="featured">Destacados</option><option value="low">Menor precio</option><option value="high">Mayor precio</option></select>
+      </label>
+    </div>
+    <nav class="category-chips" id="categoryChips" aria-label="Filtrar por categoría">
+      <button class="chip active" data-category="Todos">Todos</button>
+      <button class="chip" data-category="Celulares">Celulares</button>
+      <button class="chip" data-category="Laptops">Laptops</button>
+      <button class="chip" data-category="PC Gamer">PC Gamer</button>
+      <button class="chip" data-category="Tablets">Tablets</button>
+      <button class="chip" data-category="Smartwatches">Smartwatches</button>
+    </nav>
+    <div class="product-grid" id="productGrid"></div>
+    <p id="emptyMessage" class="empty-message" hidden>No encontramos productos con esa búsqueda.</p>
+  </main>
+
+  <section class="benefits">
+    <div><span>🚚</span><b>Envío gratis</b><small>En productos seleccionados</small></div>
+    <div><span>🔒</span><b>Compra segura</b><small>Atención directa por WhatsApp</small></div>
+    <div><span>💬</span><b>Estamos para ayudarte</b><small>Resolvemos tus dudas</small></div>
+  </section>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">M</span><span>MiTienda</span></a><p>Proyecto académico SENA · Tienda demostrativa estática</p><small>Los productos, precios y disponibilidad son ilustrativos.</small></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="drawer-head"><div><span class="eyebrow">TU PEDIDO</span><h2>Mi carrito</h2></div><button id="closeCart" class="icon-button" aria-label="Cerrar carrito">✕</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-summary"><div><span>Subtotal</span><strong id="cartTotal">$0</strong></div><p>El pedido se confirma directamente con el vendedor por WhatsApp.</p><button id="checkoutWhatsApp" class="btn btn-green full">Comprar por WhatsApp ↗</button><button id="clearCart" class="text-button">Vaciar carrito</button></div>
+  </aside>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/products.js"></script><script src="js/app.js"></script>
+</body>
+</html>
